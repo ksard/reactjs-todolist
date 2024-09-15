@@ -15,6 +15,9 @@ function persistData(newList) {
 
 // Function to add a new todo
 function handleAddTodos(newTodo) {
+  
+// Check if the newTodo is empty or only contains whitespace
+if (!newTodo.trim()) return;
  const newTodoList = [...todos,newTodo]
  persistData(newTodoList)
  setTodos(newTodoList) // Update the state with the new list
